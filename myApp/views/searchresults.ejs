@@ -7,12 +7,52 @@
             background-repeat: no-repeat;
             background-size: 100%;
         }
-
+        .container1 {
+            position: fixed;
+            left: 50px;
+            top: 150px;
+            color: white;
+        }
+        .container2 {
+            position: fixed;
+            left: 300px;
+            top: 150px;
+            color: white;
+        }
+        .container3 {
+            position: fixed;
+            left: 550px;
+            top: 150px;
+            color: white;
+        }
+        .container4 {
+            position: fixed;
+            left: 50px;
+            top: 600px;
+            color: white;
+        }
+        .container5 {
+            position: fixed;
+            left: 300px;
+            top: 600px;
+            color: white;
+        }
+        .container6 {
+            position: fixed;
+            left: 550px;
+            top: 600px;
+            color: white;
+        }
         h1 {
             color: white;
             text-align: center;
             -webkit-text-stroke: 1px blue;
         }
+        #label {
+            position: relative;
+            right: 13px;
+        }
+        
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,5 +78,14 @@
             </form>
         </div>
     </nav>
+    <%for(var i = 0; i < results.length; i++){ %>
+    <div class="container<%=i+1%>">
+    
+        <center><img id="image" src="/<%=results[i].fileName%>.jpg" width="193" height="300"></center>
+        <center><label id="label" class="ml-4 my-2"><%=results[i].title%></label></center>
+        <center><button onclick="location.href = '/<%=results[i].fileName%>';" id="<%=results[i].fileName%>" class="btn btn-secondary ml-3"> View </button></center>
+    
+    </div>
+    <% } %>
 </body>
 </html>
